@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
-import { loginUser } from '../utils/API';
+// import { loginUser } from '../utils/API';
 import Auth from '../utils/auth';
 
-
+// importing mutations
+import { useMutation } from '@apollo/react-hooks';
+import { LOGIN_USER } from '../utils/mutations';
 
 
 
@@ -15,7 +17,8 @@ const LoginForm = () => {
   const [showAlert, setShowAlert] = useState(false);
 
 
-
+// initialize mutation
+const [loginUser, {error} ] = useMutation(LOGIN_USER);
   
   const handleInputChange = (event) => {
     const { name, value } = event.target;
