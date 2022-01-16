@@ -28,25 +28,13 @@ const [loginUser, {error} ] = useMutation(LOGIN_USER);
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
     try {
-      const response = await loginUser(userFormData);
-
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
-
-      const { token, user } = await response.json();
-      console.log(user);
-      Auth.login(token);
-    } catch (err) {
-      console.error(err);
+      const { data } = await loginUser({
+        variables: {...userFormData} 
+      });
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
       setShowAlert(true);
     }
 
@@ -94,6 +82,7 @@ const [loginUser, {error} ] = useMutation(LOGIN_USER);
           variant='success'>
           Submit
         </Button>
+        {error && <div>Login failed</div>}
       </Form>
     </>
   );
