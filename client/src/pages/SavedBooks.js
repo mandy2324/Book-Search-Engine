@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React  from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
 
@@ -28,6 +28,8 @@ const handleDeleteBook = async (bookId) => {
     const { data } = await removeBook({
       variables: { bookId }
     });
+    console.log(data)
+
 
     if (error) {
       throw new Error('something went wrong!');
