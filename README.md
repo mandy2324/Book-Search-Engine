@@ -18,8 +18,8 @@ The user should clone the repository from GitHub and install dependencies. For d
 
 ## Usage 
 This application will allow users to search for books and view 10 results. Users are able to sign up and login in. Logged in users can save a book and view a page of saved books. Users can also remove books from their saved page.<br>
-Please view deployed application on [Heroku](/)<br>
-<img src=''>
+Please view deployed application on [Heroku](https://booksearchengine2324.herokuapp.com/)<br>
+<img src='client/src/images/home.png'>
 
 ## License 
 This project is license under MIT
@@ -31,4 +31,6 @@ Contributors should read the installation section.
 There are no tests for this application. 
 
 ## Questions
-If you have any questions about this projects, please contact me directly at m23saini@gmail.com. You can view more of my projects at https://github.com/mandy2324.
+* If you have any questions about this projects, please contact me directly at m23saini@gmail.com or [Linkedin](https://www.linkedin.com/in/m23saini/ )
+* You can view more of my projects at  
+[Github](https://github.com/mandy2324).
